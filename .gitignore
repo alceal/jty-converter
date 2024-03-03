@@ -18,6 +18,9 @@
 # git-cliff
 cliff.toml
 
+# Node
+node_modules/**
+
 # MacOS
 # General
 .DS_Store
