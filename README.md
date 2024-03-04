@@ -1,6 +1,8 @@
 # jty-converter
 
-![jty-converter](logo.webp)
+<div align="center">
+    <img src="./logo.png" alt="jty-converter-logo" width="30%""/>
+</div>
 
 `jty-converter` is a command-line tool written in Rust that converts between JSON, TOML, and YAML files.
 
