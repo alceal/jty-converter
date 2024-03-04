@@ -1,9 +1,15 @@
 [package]
 name = "jty-converter"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
+rust-version = "1.76.0"
 description = "JTY-Converter is a command-line tool built in Rust for effortlessly converting between JSON, TOML, and YAML file formats."
+authors = ["Alberto Cebada Aleu <contact@albertocebada.com>"]
 license = "MIT"
+homepage = "https://github.com/alceal/jty-converter"
+repository = "https://github.com/alceal/jty-converter"
+keywords = ["converter", "json", "toml", "yaml"]
+categories = ["command-line-utilities"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
@@ -11,7 +17,6 @@ license = "MIT"
 anyhow = "1.0.80"
 clap = { version = "4.5.0", features = ["derive"] }
 console = "0.15.8"
-predicates = "3.1.0"
 serde_json = "1.0.113"
 serde_yaml = "0.9.31"
 thiserror = "1.0.57"
