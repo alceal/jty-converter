@@ -17,6 +17,7 @@ jobs:
 
       - uses: taiki-e/create-gh-release-action@v1
         with:
+          draft: true
           # changelog: CHANGELOG.md
           token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -42,6 +43,7 @@ jobs:
       - uses: taiki-e/upload-rust-binary-action@v1
         with:
           bin: jty-converter
+          archive: $bin-$tag-$target
           target: ${{ matrix.target }}
           token: ${{ secrets.GITHUB_TOKEN }}
           profile: release
