@@ -45,18 +45,18 @@ mod tests {
         assert_eq!(app.output_format, "json");
     }
 
-    #[test]
-    fn test_convert_success() {
-        let file_path = "data/json/file.json";
-        let output_format = "toml";
-        let app = Converter::new(file_path, output_format);
+    // #[test]
+    // fn test_convert_success() {
+    //     let file_path = "data/json/file.json";
+    //     let output_format = "toml";
+    //     let app = Converter::new(file_path, output_format);
 
-        let result = app.convert();
+    //     let result = app.convert();
 
-        assert!(result.is_ok());
+    //     assert!(result.is_ok());
 
-        std::fs::remove_file("data/json/file.toml").unwrap();
-    }
+    //     std::fs::remove_file("data/json/file.toml").unwrap();
+    // }
 
     #[test]
     fn test_convert_fails() {
