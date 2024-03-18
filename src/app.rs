@@ -16,6 +16,8 @@ pub fn run(args: Cli) -> Result<()> {
 
 #[cfg(test)]
 mod tests {
+    use std::path::Path;
+
     use super::*;
     use crate::cli::Format;
 
@@ -34,7 +36,9 @@ mod tests {
 
         assert!(result.is_ok());
 
-        std::fs::remove_file("data/json/file.toml").unwrap();
+        if Path::new("data/json/file.toml").exists() {
+            std::fs::remove_file("data/json/file.toml").unwrap();
+        }
     }
 
     #[test]
