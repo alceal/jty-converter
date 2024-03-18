@@ -18,6 +18,9 @@
 # git-cliff
 cliff.toml
 
+# Coverage
+lcov.info
+
 # Node
 node_modules/**
 
