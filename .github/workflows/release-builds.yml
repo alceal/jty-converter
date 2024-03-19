@@ -6,15 +6,23 @@ permissions:
 on:
   push:
     tags:
-      - "[0-9]+.[0-9]+.[0-9]+"
+      - "v[0-9]+.[0-9]+.[0-9]+"
 
 jobs:
+  generate-changelog:
+    name: Generate changelog
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Run git-cliff
+        uses: tj-actions/git-cliff@v1
+
   create-release:
     name: Create release
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
       - uses: taiki-e/create-gh-release-action@v1
         with:
           draft: true
