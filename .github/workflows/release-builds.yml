@@ -14,29 +14,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: orhun/git-cliff-action@v3
-        with:
-          config: cliff.toml
-        env:
-          OUTPUT: CHANGELOG.md
-      - name: Updated CHANGELOG.md
-        env:
-          GH_TOKEN: ${{ github.token }}
-          FILE_TO_COMMIT: CHANGELOG.md
-          DESTINATION_BRANCH: main
-          MESSAGE: "chore(release): prepare for upcoming release (CHANGELOG.md)"
-        run: |
-          export SHA=$( git rev-parse $DESTINATION_BRANCH:$FILE_TO_COMMIT )
-          export CONTENT=$( base64 -i $FILE_TO_COMMIT )
-          gh api --method PUT /repos/:owner/:repo/contents/$FILE_TO_COMMIT \
-            --field message="$MESSAGE" \
-            --field content="$CONTENT" \
-            --field encoding="base64" \
-            --field branch="$DESTINATION_BRANCH" \
-            --field sha="$SHA"
       - uses: taiki-e/create-gh-release-action@v1
         with:
-          changelog: CHANGELOG.md
+          token: ${{ secrets.GITHUB_TOKEN }}
 
   release-builds:
     name: Build ${{ matrix.target }}
