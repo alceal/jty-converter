@@ -9,6 +9,13 @@ on:
       - "v[0-9]+.[0-9]+.[0-9]+"
 
 jobs:
+  generate-changelog:
+    name: Generate changelog
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: orhun/git-cliff-action@v3.0.2
+
   create-release:
     name: Create release
     runs-on: ubuntu-latest
