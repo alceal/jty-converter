@@ -14,9 +14,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: orhun/git-cliff-action@v3
+        with:
+          config: cliff.toml
+        env:
+          OUTPUT: CHANGELOG.md
       - uses: taiki-e/create-gh-release-action@v1
         with:
-          draft: true
           changelog: CHANGELOG.md
           token: ${{ secrets.GITHUB_TOKEN }}
 
