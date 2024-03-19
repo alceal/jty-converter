@@ -14,10 +14,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: tj-actions/git-cliff@v1
-        with:
-          output: CHANGELOG.md
-          template-config: cliff.toml
       - uses: taiki-e/create-gh-release-action@v1
         with:
           draft: true
