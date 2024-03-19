@@ -23,6 +23,20 @@ jobs:
         with:
           changelog: CHANGELOG.md
           token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Updated CHANGELOG.md
+        env:
+          FILE_TO_COMMIT: CHANGELOG.md
+          DESTINATION_BRANCH: main
+          MESSAGE: "chore(release): prepare for upcoming release (CHANGELOG.md)"
+        run: |
+          export SHA=$( git rev-parse $DESTINATION_BRANCH:$FILE_TO_COMMIT )
+          export CONTENT=$( base64 -i $FILE_TO_COMMIT )
+          gh api --method PUT /repos/:owner/:repo/contents/$FILE_TO_COMMIT \
+            --field message="$MESSAGE" \
+            --field content="$CONTENT" \
+            --field encoding="base64" \
+            --field branch="$DESTINATION_BRANCH" \
+            --field sha="$SHA"
 
   release-builds:
     name: Build ${{ matrix.target }}
