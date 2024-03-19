@@ -67,7 +67,7 @@ mod tests {
 
     #[test]
     fn test_reader_read_json() {
-        let file_path = Path::new("data/json/file.json");
+        let file_path = Path::new("tests/data/json/file.json");
 
         let reader = Reader::new(&Rc::new(file_path.to_path_buf()));
 
@@ -84,7 +84,7 @@ mod tests {
 
     #[test]
     fn test_reader_read_toml() {
-        let file_path = Path::new("data/toml/file.toml");
+        let file_path = Path::new("tests/data/toml/file.toml");
 
         let reader = Reader::new(&Rc::new(file_path.to_path_buf()));
 
@@ -101,7 +101,7 @@ mod tests {
 
     #[test]
     fn test_reader_read_yaml() {
-        let file_path = Path::new("data/yaml/file.yaml");
+        let file_path = Path::new("tests/data/yaml/file.yaml");
 
         let reader = Reader::new(&Rc::new(file_path.to_path_buf()));
 
@@ -135,7 +135,7 @@ mod tests {
 
     #[test]
     fn test_unsupported_file_extension() {
-        let file_path = Path::new("data/unsupported/file.txt");
+        let file_path = Path::new("tests/data/unsupported/file.txt");
 
         let reader = Reader::new(&Rc::new(file_path.to_path_buf()));
 

@@ -49,7 +49,7 @@ mod tests {
 
     #[test]
     fn test_convert_success() {
-        let file_path = "data/json/file.json";
+        let file_path = "tests/data/json/file.json";
         let output_format = "toml";
         let app = Converter::new(file_path, output_format);
 
@@ -57,14 +57,14 @@ mod tests {
 
         assert!(result.is_ok());
 
-        if Path::new("data/json/file.toml").exists() {
-            std::fs::remove_file("data/json/file.toml").unwrap();
+        if Path::new("tests/data/json/file.toml").exists() {
+            std::fs::remove_file("tests/data/json/file.toml").unwrap();
         }
     }
 
     #[test]
     fn test_convert_fails() {
-        let file_path = "data/json/file.json";
+        let file_path = "tests/data/json/file.json";
         let output_format = "json";
         let app = Converter::new(file_path, output_format);
 

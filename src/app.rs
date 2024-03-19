@@ -24,7 +24,7 @@ mod tests {
     #[test]
     fn test_run_success() {
         let args = Cli {
-            file: "data/json/file.json".to_string(),
+            file: "tests/data/json/file.json".to_string(),
             format: Format {
                 json: false,
                 toml: true,
@@ -36,15 +36,15 @@ mod tests {
 
         assert!(result.is_ok());
 
-        if Path::new("data/json/file.toml").exists() {
-            std::fs::remove_file("data/json/file.toml").unwrap();
+        if Path::new("tests/data/json/file.toml").exists() {
+            std::fs::remove_file("tests/data/json/file.toml").unwrap();
         }
     }
 
     #[test]
     fn test_run_fails() {
         let args = Cli {
-            file: "data/json/file.json".to_string(),
+            file: "tests/data/json/file.json".to_string(),
             format: Format {
                 json: true,
                 toml: false,
