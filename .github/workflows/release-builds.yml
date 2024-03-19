@@ -9,16 +9,16 @@ on:
       - "v[0-9]+.[0-9]+.[0-9]+"
 
 jobs:
-  create-release:
-    name: Create release
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
+  # create-release:
+  #   name: Create release
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v4
 
-      - uses: taiki-e/create-gh-release-action@v1
-        with:
-          # changelog: CHANGELOG.md
-          token: ${{ secrets.GITHUB_TOKEN }}
+  #     - uses: taiki-e/create-gh-release-action@v1
+  #       with:
+  #         # changelog: CHANGELOG.md
+  #         token: ${{ secrets.GITHUB_TOKEN }}
 
   release-builds:
     name: Build ${{ matrix.target }}
