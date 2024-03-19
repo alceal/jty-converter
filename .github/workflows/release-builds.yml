@@ -21,6 +21,7 @@ jobs:
           OUTPUT: CHANGELOG.md
       - name: Updated CHANGELOG.md
         env:
+          GH_TOKEN: ${{ github.token }}
           FILE_TO_COMMIT: CHANGELOG.md
           DESTINATION_BRANCH: main
           MESSAGE: "chore(release): prepare for upcoming release (CHANGELOG.md)"
