@@ -16,10 +16,3 @@ repos:
       - id: clippy
     repo: https://github.com/doublify/pre-commit-rust
     rev: v1.0
-  - hooks:
-      - id: commitizen
-      - id: commitizen-branch
-        stages:
-          - push
-    repo: https://github.com/commitizen-tools/commitizen
-    rev: v3.18.4
