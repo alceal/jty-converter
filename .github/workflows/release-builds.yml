@@ -13,7 +13,8 @@ jobs:
     name: Create release
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
       - uses: taiki-e/create-gh-release-action@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -36,8 +37,10 @@ jobs:
             os: windows-latest
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: taiki-e/upload-rust-binary-action@v1
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Create release build
+        uses: taiki-e/upload-rust-binary-action@v1
         with:
           bin: jty-converter
           archive: $bin-$tag-$target

@@ -1,6 +1,6 @@
 [package]
 name = "jty-converter"
-version = "0.1.2"
+version = "0.1.1"
 edition = "2021"
 rust-version = "1.76.0"
 description = "JTY-Converter is a command-line tool built in Rust for effortlessly converting between JSON, TOML, and YAML file formats."

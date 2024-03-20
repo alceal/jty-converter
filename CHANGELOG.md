@@ -1,14 +1,6 @@
- # Changelog
+# Changelog
 
 All notable changes to this project will be documented in this file.
-
-## [0.1.2](https://github.com/alceal/jty-converter/compare/v0.1.1...v0.1.2) - 2024-03-20
-
-### Other
-- Remove cliff.toml from .gitignore and update Cargo.lock
-- Remove changelog from create-gh-release-action
-- Add changelog parameter to create-gh-release-action
-- Add changelog with version 0.1.1 and 0.1.0 details
 
 ## [0.1.1] - 2024-03-19
 
